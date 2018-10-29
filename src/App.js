@@ -1,28 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Admin, Resource } from 'react-admin';
+import jsonHalRestProvider from 'ra-data-json-hal';
+import HomeIcon from '@material-ui/icons/Home';
+import CodeIcon from '@material-ui/icons/Code';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+import { RegexPatternsList, RegexPatternsEdit } from './regexPatterns';
+import { StationList, StationCreate, StationEdit } from './stations';
 
+const App = () => (
+    <Admin dataProvider={jsonHalRestProvider('/api')}>
+      <Resource name="regexPatterns" list={RegexPatternsList} edit={RegexPatternsEdit} icon={CodeIcon} />
+      <Resource name="stations" list={StationList} create={StationCreate} edit={StationEdit} icon={HomeIcon} />
+    </Admin>
+);
+ 
 export default App;
