@@ -1,7 +1,8 @@
 {
   "name": "fwla-center-admin",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
+  "homepage": "/admin",
   "dependencies": {
     "http-proxy-middleware": "^0.19.0",
     "ra-data-json-hal": "^1.0.7",
