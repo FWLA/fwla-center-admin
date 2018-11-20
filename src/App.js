@@ -5,6 +5,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import CodeIcon from '@material-ui/icons/Code';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
 import SettingsIcon from '@material-ui/icons/Settings';
+import InfoIcon from '@material-ui/icons/Info';
 
 import { RegexPatternsList, RegexPatternsEdit } from './regexPatterns';
 import { StationList, StationCreate, StationEdit } from './stations';
@@ -12,6 +13,7 @@ import { OperationKeysList, OperationKeysCreate, OperationKeysEdit } from './ope
 import { ActiveResourceList, ActiveResourceCreate, ActiveResourceEdit } from './activeResources';
 import { PassiveResourceList, PassiveResourceCreate, PassiveResourceEdit } from './passiveResources';
 import { RealEstateList, RealEstateCreate, RealEstateEdit } from './realEstates';
+import { EventLogList } from './eventLogs';
 
 const App = () => (
     <Admin dataProvider={provider('/api/v1')}>
@@ -21,6 +23,7 @@ const App = () => (
       <Resource name="activeResources" options={{ label: 'Active Resources' }} list={ActiveResourceList} create={ActiveResourceCreate} edit={ActiveResourceEdit} icon={SettingsIcon} />
       <Resource name="passiveResources" options={{ label: 'Passive Resources' }} list={PassiveResourceList} create={PassiveResourceCreate} edit={PassiveResourceEdit} icon={SettingsIcon} />
       <Resource name="realEstates" options={{ label: 'Real Estate' }} list={RealEstateList} create={RealEstateCreate} edit={RealEstateEdit} icon={HomeIcon} />
+      <Resource name="eventLogs" options={{ label: 'Event Logs' }} list={EventLogList} icon={InfoIcon} />
     </Admin>
 );
  
