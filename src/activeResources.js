@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Datagrid, TextField, ReferenceField, EditButton, DeleteButton, Create, SimpleForm, TextInput, ReferenceInput, SelectInput, Edit, DisabledInput } from 'react-admin';
+import { List, Datagrid, TextField, ReferenceField, BooleanField, EditButton, DeleteButton, Create, SimpleForm, TextInput, ReferenceInput, BooleanInput, SelectInput, Edit, DisabledInput } from 'react-admin';
 
 export const ActiveResourceList = (props) => (
     <List {...props}>
@@ -9,6 +9,7 @@ export const ActiveResourceList = (props) => (
             <ReferenceField source="stationId" reference="stations" label="Station">
                 <TextField source="name" />
             </ReferenceField>
+            <BooleanField source="inService" label="In Service" />
             <EditButton />
             <DeleteButton />
         </Datagrid>
@@ -23,6 +24,7 @@ export const ActiveResourceCreate = (props) => (
             <ReferenceInput label="Station" source="stationId" reference="stations">
                 <SelectInput optionText="name" optionValue="id" />
             </ReferenceInput>
+            <BooleanInput source="inService" label="In Service" />
         </SimpleForm>
     </Create>
 );
@@ -36,6 +38,7 @@ export const ActiveResourceEdit = (props) => (
             <ReferenceInput label="Station" source="stationId" reference="stations">
                 <SelectInput optionText="name" optionValue="id" />
             </ReferenceInput>
+            <BooleanInput source="inService" label="In Service" />
         </SimpleForm>
     </Edit>
 );

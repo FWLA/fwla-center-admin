@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Datagrid, TextField, ReferenceField, ReferenceArrayField, SingleFieldList, ChipField, EditButton, DeleteButton, Create, SimpleForm, TextInput, ReferenceInput, ReferenceArrayInput, SelectArrayInput, SelectInput, Edit, DisabledInput } from 'react-admin';
+import { List, Datagrid, TextField, ReferenceField, BooleanField, ReferenceArrayField, SingleFieldList, ChipField, EditButton, DeleteButton, Create, SimpleForm, TextInput, ReferenceInput, ReferenceArrayInput, SelectArrayInput, SelectInput, BooleanInput, Edit, DisabledInput } from 'react-admin';
 
 export const PassiveResourceList = (props) => (
     <List {...props}>
@@ -14,6 +14,7 @@ export const PassiveResourceList = (props) => (
                     <ChipField source="name" />
                 </SingleFieldList>
             </ReferenceArrayField>
+            <BooleanField source="inService" label="In Service" />
             <EditButton />
             <DeleteButton />
         </Datagrid>
@@ -31,6 +32,7 @@ export const PassiveResourceCreate = (props) => (
             <ReferenceArrayInput source="attachableToIds" reference="activeResources" label="Attachable to">
                 <SelectArrayInput optionText="name" optionValue="id" />
             </ReferenceArrayInput>
+            <BooleanInput source="inService" label="In Service" />
         </SimpleForm>
     </Create>
 );
@@ -47,6 +49,7 @@ export const PassiveResourceEdit = (props) => (
             <ReferenceArrayInput source="attachableToIds" reference="activeResources" label="Attachable to">
                 <SelectArrayInput optionText="name" optionValue="id" />
             </ReferenceArrayInput>
+            <BooleanInput source="inService" label="In Service" />
         </SimpleForm>
     </Edit>
 );
