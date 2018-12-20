@@ -4,17 +4,17 @@ import { List, Datagrid, TextField, ReferenceField, BooleanField, ReferenceArray
 export const PassiveResourceList = (props) => (
     <List {...props}>
         <Datagrid>
-            <TextField source="name" label="Name" />
-            <TextField source="radio" label="Radio" />
-            <ReferenceField source="stationId" reference="stations" label="Station">
+            <TextField source="name" label="Bezeichnung" />
+            <TextField source="radio" label="Funkrufname" />
+            <ReferenceField source="stationId" reference="stations" label="Standort">
                 <TextField source="name" />
             </ReferenceField>
-            <ReferenceArrayField source="attachableToIds" reference="activeResources" label="Attachable to">
+            <ReferenceArrayField source="attachableToIds" reference="activeResources" label="Zugfahrzeuge">
                 <SingleFieldList>
                     <ChipField source="name" />
                 </SingleFieldList>
             </ReferenceArrayField>
-            <BooleanField source="inService" label="In Service" />
+            <BooleanField source="inService" label="In Betrieb" />
             <EditButton />
             <DeleteButton />
         </Datagrid>
@@ -24,15 +24,15 @@ export const PassiveResourceList = (props) => (
 export const PassiveResourceCreate = (props) => (
     <Create {...props}>
         <SimpleForm>
-            <TextInput source="name" label="Name" />
-            <TextInput source="radio" label="Radio" />
-            <ReferenceInput label="Station" source="stationId" reference="stations">
+            <TextInput source="name" label="Bezeichnung" />
+            <TextInput source="radio" label="Funkrufname" />
+            <ReferenceInput label="Standort" source="stationId" reference="stations">
                 <SelectInput optionText="name" optionValue="id" />
             </ReferenceInput>
-            <ReferenceArrayInput source="attachableToIds" reference="activeResources" label="Attachable to">
+            <ReferenceArrayInput source="attachableToIds" reference="activeResources" label="Zugfahrzeuge">
                 <SelectArrayInput optionText="name" optionValue="id" />
             </ReferenceArrayInput>
-            <BooleanInput source="inService" label="In Service" />
+            <BooleanInput source="inService" label="In Betrieb" />
         </SimpleForm>
     </Create>
 );
@@ -41,15 +41,15 @@ export const PassiveResourceEdit = (props) => (
     <Edit {...props}>
         <SimpleForm>
             <DisabledInput source="id" label="ID" />
-            <TextInput source="name" label="Name" />
-            <TextInput source="radio" label="Radio" />
-            <ReferenceInput label="Station" source="stationId" reference="stations">
+            <TextInput source="name" label="Bezeichnung" />
+            <TextInput source="radio" label="Funkrufname" />
+            <ReferenceInput label="Standort" source="stationId" reference="stations">
                 <SelectInput optionText="name" optionValue="id" />
             </ReferenceInput>
-            <ReferenceArrayInput source="attachableToIds" reference="activeResources" label="Attachable to">
+            <ReferenceArrayInput source="attachableToIds" reference="activeResources" label="Zugfahrzeuge">
                 <SelectArrayInput optionText="name" optionValue="id" />
             </ReferenceArrayInput>
-            <BooleanInput source="inService" label="In Service" />
+            <BooleanInput source="inService" label="In Betrieb" />
         </SimpleForm>
     </Edit>
 );

@@ -4,12 +4,12 @@ import { List, Datagrid, TextField, EditButton, DeleteButton, Create, SimpleForm
 export const RealEstateList = (props) => (
     <List {...props}>
         <Datagrid>
-            <TextField source="name" label="Name" />
-            <TextField source="key" label="Key" />
-            <TextField source="address.street" label="Street" />
-            <TextField source="address.zip" label="ZIP-Code" />
-            <TextField source="address.town" label="Town" />
-            <TextField source="address.district" label="District" />
+            <TextField source="name" label="Bezeichnung" />
+            <TextField source="key" label="Schlüssel" />
+            <TextField source="address.street" label="Straße" />
+            <TextField source="address.zip" label="PLZ" />
+            <TextField source="address.town" label="Ort" />
+            <TextField source="address.district" label="Ortsteil" />
             <EditButton />
             <DeleteButton />
         </Datagrid>
@@ -19,12 +19,12 @@ export const RealEstateList = (props) => (
 export const RealEstateCreate = (props) => (
     <Create {...props}>
         <SimpleForm>
-            <TextInput source="name" label="Name" />
-            <TextInput source="key" label="Key" />
-            <TextInput source="address.street" label="Street" />
-            <TextInput source="address.zip" label="ZIP-Code" />
-            <TextInput source="address.town" label="Town" />
-            <TextInput source="address.district" label="District" />
+            <TextInput source="name" label="Bezeichnung" />
+            <TextInput source="key" label="Schlüssel" />
+            <TextInput source="address.street" label="Straße" />
+            <TextInput source="address.zip" label="PLZ" />
+            <TextInput source="address.town" label="Ort" />
+            <TextInput source="address.district" label="Ortsteil" />
             <LongTextInput source="information" label="Information" />
         </SimpleForm>
     </Create>
@@ -34,12 +34,12 @@ export const RealEstateEdit = (props) => (
     <Edit {...props}>
         <SimpleForm>
             <DisabledInput source="id" />
-            <TextInput source="name" />
-            <TextInput source="key" label="Key" />
-            <TextInput source="address.street" label="Street" />
-            <TextInput source="address.zip" label="ZIP-Code" />
-            <TextInput source="address.town" label="Town" />
-            <TextInput source="address.district" label="District" />
+            <TextInput source="name" label="Bezeichnung" />
+            <TextInput source="key" label="Schlüssel" />
+            <TextInput source="address.street" label="Straße" />
+            <TextInput source="address.zip" label="PLZ" />
+            <TextInput source="address.town" label="Ort" />
+            <TextInput source="address.district" label="Ortsteil" />
             <LongTextInput source="information" label="Information" />
         </SimpleForm>
     </Edit>

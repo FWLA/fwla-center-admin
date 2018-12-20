@@ -4,9 +4,9 @@ import { List, Datagrid, TextField, DeleteButton } from 'react-admin';
 export const EventLogList = (props) => (
     <List {...props}>
         <Datagrid>
-            <TextField source="time" label="Time" />
-            <TextField source="type" label="Type" />
-            <TextField source="message" label="Message" />
+            <TextField source="time" label="Zeit" />
+            <TextField source="type" label="Level" />
+            <TextField source="message" label="Nachricht" />
             <DeleteButton />
         </Datagrid>
     </List>

@@ -4,12 +4,12 @@ import { List, Datagrid, TextField, ReferenceField, BooleanField, EditButton, De
 export const ActiveResourceList = (props) => (
     <List {...props}>
         <Datagrid>
-            <TextField source="name" label="Name" />
-            <TextField source="radio" label="Radio" />
-            <ReferenceField source="stationId" reference="stations" label="Station">
+            <TextField source="name" label="Bezeichnung" />
+            <TextField source="radio" label="Funkrufname" />
+            <ReferenceField source="stationId" reference="stations" label="Standort">
                 <TextField source="name" />
             </ReferenceField>
-            <BooleanField source="inService" label="In Service" />
+            <BooleanField source="inService" label="In Betrieb" />
             <EditButton />
             <DeleteButton />
         </Datagrid>
@@ -19,12 +19,12 @@ export const ActiveResourceList = (props) => (
 export const ActiveResourceCreate = (props) => (
     <Create {...props}>
         <SimpleForm>
-            <TextInput source="name" label="Name" />
-            <TextInput source="radio" label="Radio" />
-            <ReferenceInput label="Station" source="stationId" reference="stations">
+            <TextInput source="name" label="Bezeichnung" />
+            <TextInput source="radio" label="Funkrufname" />
+            <ReferenceInput label="Standort" source="stationId" reference="stations">
                 <SelectInput optionText="name" optionValue="id" />
             </ReferenceInput>
-            <BooleanInput source="inService" label="In Service" />
+            <BooleanInput source="inService" label="In Betrieb" />
         </SimpleForm>
     </Create>
 );
@@ -33,12 +33,12 @@ export const ActiveResourceEdit = (props) => (
     <Edit {...props}>
         <SimpleForm>
             <DisabledInput source="id" label="ID" />
-            <TextInput source="name" label="Name" />
-            <TextInput source="radio" label="Radio" />
-            <ReferenceInput label="Station" source="stationId" reference="stations">
+            <TextInput source="name" label="Bezeichnung" />
+            <TextInput source="radio" label="Funkrufname" />
+            <ReferenceInput label="Standort" source="stationId" reference="stations">
                 <SelectInput optionText="name" optionValue="id" />
             </ReferenceInput>
-            <BooleanInput source="inService" label="In Service" />
+            <BooleanInput source="inService" label="In Betrieb" />
         </SimpleForm>
     </Edit>
 );
