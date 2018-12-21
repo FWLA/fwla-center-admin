@@ -1,11 +1,12 @@
 import React from 'react';
 import { List, Datagrid, TextField, ReferenceField, BooleanField, EditButton, DeleteButton, Create, SimpleForm, TextInput, ReferenceInput, BooleanInput, SelectInput, Edit, DisabledInput } from 'react-admin';
 
-export const ActiveResourceList = (props) => (
+export const ResourceList = (props) => (
     <List {...props}>
         <Datagrid>
             <TextField source="name" label="Bezeichnung" />
             <TextField source="radio" label="Funkrufname" />
+            <TextField source="key" label="Schlüssel" />
             <ReferenceField source="stationId" reference="stations" label="Standort">
                 <TextField source="name" />
             </ReferenceField>
@@ -16,11 +17,12 @@ export const ActiveResourceList = (props) => (
     </List>
 );
 
-export const ActiveResourceCreate = (props) => (
+export const ResourceCreate = (props) => (
     <Create {...props}>
         <SimpleForm>
             <TextInput source="name" label="Bezeichnung" />
             <TextInput source="radio" label="Funkrufname" />
+            <TextInput source="key" label="Schlüssel" />
             <ReferenceInput label="Standort" source="stationId" reference="stations">
                 <SelectInput optionText="name" optionValue="id" />
             </ReferenceInput>
@@ -29,12 +31,13 @@ export const ActiveResourceCreate = (props) => (
     </Create>
 );
 
-export const ActiveResourceEdit = (props) => (
+export const ResourceEdit = (props) => (
     <Edit {...props}>
         <SimpleForm>
             <DisabledInput source="id" label="ID" />
             <TextInput source="name" label="Bezeichnung" />
             <TextInput source="radio" label="Funkrufname" />
+            <TextInput source="key" label="Schlüssel" />
             <ReferenceInput label="Standort" source="stationId" reference="stations">
                 <SelectInput optionText="name" optionValue="id" />
             </ReferenceInput>
