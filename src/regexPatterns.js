@@ -7,7 +7,7 @@ const sources = [
 ];
 
 export const RegexPatternsList = (props) => (
-    <List {...props}>
+    <List title="Regex Patterns" {...props}>
         <Datagrid>
             <TextField source="id" label="Field" />
             <SelectField source="source" label="Source" choices={sources} />
@@ -18,7 +18,7 @@ export const RegexPatternsList = (props) => (
 );
 
 export const RegexPatternsEdit = (props) => (
-    <Edit {...props}>
+    <Edit title="Regex Pattern bearbeiten" {...props}>
         <SimpleForm>
             <DisabledInput source="id" label="Field" />
             <SelectInput source="source" label="Source" choices={sources} />

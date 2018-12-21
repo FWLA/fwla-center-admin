@@ -2,7 +2,7 @@ import React from 'react';
 import { List, Datagrid, TextField, ReferenceField, BooleanField, EditButton, DeleteButton, Create, SimpleForm, TextInput, ReferenceInput, BooleanInput, SelectInput, Edit, DisabledInput } from 'react-admin';
 
 export const ResourceList = (props) => (
-    <List {...props}>
+    <List title="Fahrzeuge" {...props}>
         <Datagrid>
             <TextField source="name" label="Bezeichnung" />
             <TextField source="radio" label="Funkrufname" />
@@ -18,7 +18,7 @@ export const ResourceList = (props) => (
 );
 
 export const ResourceCreate = (props) => (
-    <Create {...props}>
+    <Create title="Fahrzeug erstellen" {...props}>
         <SimpleForm>
             <TextInput source="name" label="Bezeichnung" />
             <TextInput source="radio" label="Funkrufname" />
@@ -32,7 +32,7 @@ export const ResourceCreate = (props) => (
 );
 
 export const ResourceEdit = (props) => (
-    <Edit {...props}>
+    <Edit title="Fahrzeug bearbeiten" {...props}>
         <SimpleForm>
             <DisabledInput source="id" label="ID" />
             <TextInput source="name" label="Bezeichnung" />

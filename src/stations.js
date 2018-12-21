@@ -2,7 +2,7 @@ import React from 'react';
 import { List, Datagrid, TextField, EditButton, DeleteButton, Create, SimpleForm, TextInput, Edit, DisabledInput } from 'react-admin';
 
 export const StationList = (props) => (
-    <List {...props}>
+    <List title="Standorte" {...props}>
         <Datagrid>
             <TextField source="name" label="Bezeichnung" />
             <TextField source="address.street" label="Straße" />
@@ -16,7 +16,7 @@ export const StationList = (props) => (
 );
 
 export const StationCreate = (props) => (
-    <Create {...props}>
+    <Create title="Standort erstellen" {...props}>
         <SimpleForm>
             <TextInput source="name" label="Bezeichnung" />
             <TextInput source="address.street" label="Straße" />
@@ -28,7 +28,7 @@ export const StationCreate = (props) => (
 );
 
 export const StationEdit = (props) => (
-    <Edit {...props}>
+    <Edit title="Standort bearbeiten" {...props}>
         <SimpleForm>
             <DisabledInput source="id" label="ID" />
             <TextInput source="name" label="Bezeichnung" />

@@ -7,7 +7,7 @@ const operationTypes = [
 ];
 
 export const OperationKeysList = (props) => (
-    <List {...props}>
+    <List title="Einsatzstichworte" {...props}>
         <Datagrid>
             <TextField source="key" label="Bezeichnung" />
             <TextField source="code" label="Schlüssel" />
@@ -20,7 +20,7 @@ export const OperationKeysList = (props) => (
 );
 
 export const OperationKeysCreate = (props) => (
-    <Create {...props}>
+    <Create title="Einsatzstichwort erstellen" {...props}>
         <SimpleForm>
             <TextInput source="key" label="Bezeichnung" />
             <TextInput source="code" label="Schlüssel" />
@@ -31,7 +31,7 @@ export const OperationKeysCreate = (props) => (
 );
 
 export const OperationKeysEdit = (props) => (
-    <Edit {...props}>
+    <Edit title="Einsatzstichwort bearbeiten" {...props}>
         <SimpleForm>
             <DisabledInput source="id" />
             <TextInput source="key" label="Bezeichnung" />

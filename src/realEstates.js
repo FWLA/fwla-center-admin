@@ -2,7 +2,7 @@ import React from 'react';
 import { List, Datagrid, TextField, EditButton, DeleteButton, Create, SimpleForm, TextInput, LongTextInput, Edit, DisabledInput } from 'react-admin';
 
 export const RealEstateList = (props) => (
-    <List {...props}>
+    <List title="Objekte" {...props}>
         <Datagrid>
             <TextField source="name" label="Bezeichnung" />
             <TextField source="key" label="Schlüssel" />
@@ -17,7 +17,7 @@ export const RealEstateList = (props) => (
 );
 
 export const RealEstateCreate = (props) => (
-    <Create {...props}>
+    <Create title="Objekt erstellen" {...props}>
         <SimpleForm>
             <TextInput source="name" label="Bezeichnung" />
             <TextInput source="key" label="Schlüssel" />
@@ -31,7 +31,7 @@ export const RealEstateCreate = (props) => (
 );
 
 export const RealEstateEdit = (props) => (
-    <Edit {...props}>
+    <Edit title="Objekt bearbeiten" {...props}>
         <SimpleForm>
             <DisabledInput source="id" />
             <TextInput source="name" label="Bezeichnung" />

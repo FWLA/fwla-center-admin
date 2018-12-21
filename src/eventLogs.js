@@ -2,7 +2,7 @@ import React from 'react';
 import { List, Datagrid, TextField, DeleteButton } from 'react-admin';
 
 export const EventLogList = (props) => (
-    <List {...props}>
+    <List title="Event Logs" {...props}>
         <Datagrid>
             <TextField source="time" label="Zeit" />
             <TextField source="type" label="Level" />
