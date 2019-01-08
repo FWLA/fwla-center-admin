@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Datagrid, TextField, EditButton, DeleteButton, Create, SimpleForm, TextInput, LongTextInput, Edit, DisabledInput } from 'react-admin';
+import { ArrayInput, Create, Datagrid, DeleteButton, DisabledInput, Edit, EditButton, List, LongTextInput, SimpleForm, SimpleFormIterator, TextField, TextInput } from 'react-admin';
 
 export const RealEstateList = (props) => (
     <List title="Objekte" {...props}>
@@ -26,6 +26,11 @@ export const RealEstateCreate = (props) => (
             <TextInput source="address.town" label="Ort" />
             <TextInput source="address.district" label="Ortsteil" />
             <LongTextInput source="information" label="Information" />
+            <ArrayInput source="links" label="Links">
+                <SimpleFormIterator>
+                    <TextInput label="Link" />
+                </SimpleFormIterator>
+            </ArrayInput>
         </SimpleForm>
     </Create>
 );
@@ -41,6 +46,11 @@ export const RealEstateEdit = (props) => (
             <TextInput source="address.town" label="Ort" />
             <TextInput source="address.district" label="Ortsteil" />
             <LongTextInput source="information" label="Information" />
+            <ArrayInput source="links" label="Links">
+                <SimpleFormIterator>
+                    <TextInput label="Link" />
+                </SimpleFormIterator>
+            </ArrayInput>
         </SimpleForm>
     </Edit>
 );
