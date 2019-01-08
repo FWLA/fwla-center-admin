@@ -5,7 +5,7 @@ export const RealEstateList = (props) => (
     <List title="Objekte" {...props}>
         <Datagrid>
             <TextField source="name" label="Bezeichnung" />
-            <TextField source="key" label="Schlüssel" />
+            <TextField source="pattern" label="Pattern" />
             <TextField source="address.street" label="Straße" />
             <TextField source="address.zip" label="PLZ" />
             <TextField source="address.town" label="Ort" />
@@ -20,7 +20,7 @@ export const RealEstateCreate = (props) => (
     <Create title="Objekt erstellen" {...props}>
         <SimpleForm>
             <TextInput source="name" label="Bezeichnung" />
-            <TextInput source="key" label="Schlüssel" />
+            <TextInput source="pattern" label="Pattern" />
             <TextInput source="address.street" label="Straße" />
             <TextInput source="address.zip" label="PLZ" />
             <TextInput source="address.town" label="Ort" />
@@ -35,7 +35,7 @@ export const RealEstateEdit = (props) => (
         <SimpleForm>
             <DisabledInput source="id" />
             <TextInput source="name" label="Bezeichnung" />
-            <TextInput source="key" label="Schlüssel" />
+            <TextInput source="pattern" label="Pattern" />
             <TextInput source="address.street" label="Straße" />
             <TextInput source="address.zip" label="PLZ" />
             <TextInput source="address.town" label="Ort" />
