@@ -1,15 +1,17 @@
 import React from 'react';
-import { ArrayInput, Create, Datagrid, DeleteButton, DisabledInput, Edit, EditButton, List, LongTextInput, SimpleForm, SimpleFormIterator, TextField, TextInput } from 'react-admin';
+import { ArrayInput, Create, Datagrid, DeleteButton, NumberInput, NumberField, DisabledInput, Edit, EditButton, List, LongTextInput, SimpleForm, SimpleFormIterator, TextField, TextInput } from 'react-admin';
 
 export const RealEstateList = (props) => (
     <List title="Objekte" {...props}>
         <Datagrid>
             <TextField source="name" label="Bezeichnung" />
             <TextField source="pattern" label="Pattern" />
-            <TextField source="address.street" label="Straße" />
-            <TextField source="address.zip" label="PLZ" />
-            <TextField source="address.town" label="Ort" />
-            <TextField source="address.district" label="Ortsteil" />
+            <TextField source="location.address.street" label="Straße" />
+            <TextField source="location.address.zip" label="PLZ" />
+            <TextField source="location.address.town" label="Ort" />
+            <TextField source="location.address.district" label="Ortsteil" />
+            <NumberField source="location.coordinate.latitude" label="Breitengrad" />
+            <NumberField source="location.coordinate.longitude" label="Längengrad" />
             <EditButton />
             <DeleteButton />
         </Datagrid>
@@ -21,10 +23,12 @@ export const RealEstateCreate = (props) => (
         <SimpleForm>
             <TextInput source="name" label="Bezeichnung" />
             <TextInput source="pattern" label="Pattern" />
-            <TextInput source="address.street" label="Straße" />
-            <TextInput source="address.zip" label="PLZ" />
-            <TextInput source="address.town" label="Ort" />
-            <TextInput source="address.district" label="Ortsteil" />
+            <TextInput source="location.address.street" label="Straße" />
+            <TextInput source="location.address.zip" label="PLZ" />
+            <TextInput source="location.address.town" label="Ort" />
+            <TextInput source="location.address.district" label="Ortsteil" />
+            <NumberInput source="location.coordinate.latitude" label="Breitengrad" />
+            <NumberInput source="location.coordinate.longitude" label="Längengrad" />
             <LongTextInput source="information" label="Information" />
             <ArrayInput source="links" label="Links">
                 <SimpleFormIterator>
@@ -41,10 +45,12 @@ export const RealEstateEdit = (props) => (
             <DisabledInput source="id" />
             <TextInput source="name" label="Bezeichnung" />
             <TextInput source="pattern" label="Pattern" />
-            <TextInput source="address.street" label="Straße" />
-            <TextInput source="address.zip" label="PLZ" />
-            <TextInput source="address.town" label="Ort" />
-            <TextInput source="address.district" label="Ortsteil" />
+            <TextInput source="location.address.street" label="Straße" />
+            <TextInput source="location.address.zip" label="PLZ" />
+            <TextInput source="location.address.town" label="Ort" />
+            <TextInput source="location.address.district" label="Ortsteil" />
+            <NumberInput source="location.coordinate.latitude" label="Breitengrad" />
+            <NumberInput source="location.coordinate.longitude" label="Längengrad" />
             <LongTextInput source="information" label="Information" />
             <ArrayInput source="links" label="Links">
                 <SimpleFormIterator>
