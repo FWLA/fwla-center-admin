@@ -1,5 +1,14 @@
 import React from 'react';
-import { ArrayInput, Create, Datagrid, DeleteButton, NumberInput, NumberField, DisabledInput, Edit, EditButton, List, LongTextInput, SimpleForm, SimpleFormIterator, TextField, TextInput } from 'react-admin';
+import { ArrayInput, Create, Datagrid, SelectField, SelectInput, DeleteButton, NumberInput, NumberField, DisabledInput, Edit, EditButton, List, LongTextInput, SimpleForm, SimpleFormIterator, TextField, TextInput } from 'react-admin';
+
+const n = 128;
+const folderAddresses = [];
+for (var i = 0; i < n; i++) {
+    folderAddresses.push({
+        id: i,
+        name: i + 1
+    });
+}
 
 export const RealEstateList = (props) => (
     <List title="Objekte" {...props}>
@@ -12,6 +21,7 @@ export const RealEstateList = (props) => (
             <TextField source="location.address.district" label="Ortsteil" />
             <NumberField source="location.coordinate.latitude" label="Breitengrad" />
             <NumberField source="location.coordinate.longitude" label="Längengrad" />
+            <SelectField source="folderAddress" choices={folderAddresses} label="Platz Ordner" />
             <EditButton />
             <DeleteButton />
         </Datagrid>
@@ -29,6 +39,7 @@ export const RealEstateCreate = (props) => (
             <TextInput source="location.address.district" label="Ortsteil" />
             <NumberInput source="location.coordinate.latitude" label="Breitengrad" />
             <NumberInput source="location.coordinate.longitude" label="Längengrad" />
+            <SelectInput source="folderAddress" choices={folderAddresses} label="Platz Ordner" />
             <LongTextInput source="information" label="Information" />
             <ArrayInput source="links" label="Links">
                 <SimpleFormIterator>
@@ -51,6 +62,7 @@ export const RealEstateEdit = (props) => (
             <TextInput source="location.address.district" label="Ortsteil" />
             <NumberInput source="location.coordinate.latitude" label="Breitengrad" />
             <NumberInput source="location.coordinate.longitude" label="Längengrad" />
+            <SelectInput source="folderAddress" choices={folderAddresses} label="Platz Ordner" />
             <LongTextInput source="information" label="Information" />
             <ArrayInput source="links" label="Links">
                 <SimpleFormIterator>
