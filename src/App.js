@@ -15,6 +15,7 @@ import { RegexPatternsEdit, RegexPatternsList } from './regexPatterns';
 import { ResourceKeyPatternsCreate, ResourceKeyPatternsEdit, ResourceKeyPatternsList } from './resourceKeyPatterns';
 import { ResourceCreate, ResourceEdit, ResourceList } from './resources';
 import { StationCreate, StationEdit, StationList } from './stations';
+import { OperationsList, OperationsShow } from './operations';
 
 
 const messages = {
@@ -32,6 +33,7 @@ const App = () => (
     <Resource name="ambulancePatterns" options={{ label: 'Rettungsdienst-Pattern' }} create={AmbulancePatternsCreate} edit={AmbulancePatternsEdit} list={AmbulancePatternsList} icon={CodeIcon} />
     <Resource name="resources" options={{ label: 'Fahrzeuge' }} list={ResourceList} create={ResourceCreate} edit={ResourceEdit} icon={DriveEtaIcon} />
     <Resource name="realEstates" options={{ label: 'Objekte' }} list={RealEstateList} create={RealEstateCreate} edit={RealEstateEdit} icon={HomeIcon} />
+    <Resource name="operations" options={{ label: 'Einsätze' }} list={OperationsList} show={OperationsShow} icon={WhatshotIcon} />
     <Resource name="eventLogs" options={{ label: 'Logs' }} list={EventLogList} icon={InfoIcon} />
   </Admin>
 );
