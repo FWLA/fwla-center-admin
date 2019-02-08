@@ -7,7 +7,7 @@ export const OperationsList = (props) => (
         <Datagrid>
             <TextField source="id" label="ID" />
             <DateField source="time" showTime label="Alarmzeit" />
-            <ReferenceField source="operatiomenKeyId" reference="operationKeys" allowEmpty label="Einsatzstichwort">
+            <ReferenceField source="operationKeyId" reference="operationKeys" allowEmpty label="Einsatzstichwort">
                 <TextField source="key" />
             </ReferenceField>
             <TextField source="code" label="Code" />
