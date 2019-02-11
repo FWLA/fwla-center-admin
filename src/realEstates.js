@@ -39,7 +39,7 @@ export const RealEstateCreate = (props) => (
             <TextInput source="location.address.district" label="Ortsteil" />
             <NumberInput source="location.coordinate.latitude" label="Breitengrad" />
             <NumberInput source="location.coordinate.longitude" label="Längengrad" />
-            <SelectInput source="folderAddress" choices={folderAddresses} label="Platz Ordner" />
+            <SelectInput source="folderAddress" choices={folderAddresses} allowEmpty label="Platz Ordner" />
             <LongTextInput source="information" label="Information" />
             <ArrayInput source="links" label="Links">
                 <SimpleFormIterator>
@@ -62,7 +62,7 @@ export const RealEstateEdit = (props) => (
             <TextInput source="location.address.district" label="Ortsteil" />
             <NumberInput source="location.coordinate.latitude" label="Breitengrad" />
             <NumberInput source="location.coordinate.longitude" label="Längengrad" />
-            <SelectInput source="folderAddress" choices={folderAddresses} label="Platz Ordner" />
+            <SelectInput source="folderAddress" choices={folderAddresses} allowEmpty label="Platz Ordner" />
             <LongTextInput source="information" label="Information" />
             <ArrayInput source="links" label="Links">
                 <SimpleFormIterator>
