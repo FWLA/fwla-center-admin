@@ -43,7 +43,8 @@ export const RealEstateCreate = (props) => (
             <LongTextInput source="information" label="Information" />
             <ArrayInput source="links" label="Links">
                 <SimpleFormIterator>
-                    <TextInput label="Link" />
+                    <TextInput source="description" label="Beschreibung" />
+                    <TextInput source="link" label="Link" />
                 </SimpleFormIterator>
             </ArrayInput>
         </SimpleForm>
@@ -66,7 +67,8 @@ export const RealEstateEdit = (props) => (
             <LongTextInput source="information" label="Information" />
             <ArrayInput source="links" label="Links">
                 <SimpleFormIterator>
-                    <TextInput label="Link" />
+                    <TextInput source="description" label="Beschreibung" />
+                    <TextInput source="link" label="Link" />
                 </SimpleFormIterator>
             </ArrayInput>
         </SimpleForm>
