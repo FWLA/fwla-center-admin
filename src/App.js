@@ -16,6 +16,7 @@ import { ResourceKeyPatternsCreate, ResourceKeyPatternsEdit, ResourceKeyPatterns
 import { ResourceCreate, ResourceEdit, ResourceList } from './resources';
 import { StationCreate, StationEdit, StationList } from './stations';
 import { OperationsList, OperationsShow } from './operations';
+import { RiverSectorList, RiverSectorCreate, RiverSectorEdit } from './riverSectors';
 
 
 const messages = {
@@ -34,6 +35,7 @@ const App = () => (
     <Resource name="resources" options={{ label: 'Fahrzeuge' }} list={ResourceList} create={ResourceCreate} edit={ResourceEdit} icon={DriveEtaIcon} />
     <Resource name="realEstates" options={{ label: 'Objekte' }} list={RealEstateList} create={RealEstateCreate} edit={RealEstateEdit} icon={HomeIcon} />
     <Resource name="operations" options={{ label: 'Einsätze' }} list={OperationsList} show={OperationsShow} icon={WhatshotIcon} />
+    <Resource name="riverSectors" options={{ label: 'Flussabschnitte' }} list={RiverSectorList} create={RiverSectorCreate} edit={RiverSectorEdit} icon={CodeIcon} />
     <Resource name="eventLogs" options={{ label: 'Logs' }} list={EventLogList} icon={InfoIcon} />
   </Admin>
 );
