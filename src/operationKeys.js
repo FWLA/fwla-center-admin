@@ -7,7 +7,7 @@ const operationTypes = [
 ];
 
 export const OperationKeysList = (props) => (
-    <List title="Einsatzstichworte" {...props}>
+    <List title="Einsatzstichworte" sort={{ field: 'key', order: 'ASC' }} {...props}>
         <Datagrid>
             <TextField source="key" label="Bezeichnung" />
             <TextField source="code" label="Schlüssel" />

@@ -7,7 +7,7 @@ const sources = [
 ];
 
 export const RegexPatternsList = (props) => (
-    <List title="Regex Patterns" {...props}>
+    <List title="Regex Patterns" sort={{ field: 'id', order: 'ASC' }} {...props}>
         <Datagrid>
             <TextField source="id" label="Field" />
             <SelectField source="source" label="Source" choices={sources} />

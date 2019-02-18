@@ -3,7 +3,7 @@ import { BooleanField, ChipField, Datagrid, DateField, List, NumberField, Refere
 import { SimpleArray } from './SimpleArray';
 
 export const OperationsList = (props) => (
-    <List title="Einsätze" {...props}>
+    <List title="Einsätze" sort={{ field: 'time', order: 'DESC' }} {...props}>
         <Datagrid>
             <TextField source="id" label="ID" />
             <DateField source="time" showTime label="Alarmzeit" />

@@ -2,7 +2,7 @@ import React from 'react';
 import { List, Datagrid, TextField, ReferenceField, BooleanField, EditButton, DeleteButton, Create, SimpleForm, TextInput, ReferenceInput, BooleanInput, SelectInput, Edit, DisabledInput } from 'react-admin';
 
 export const ResourceList = (props) => (
-    <List title="Fahrzeuge" {...props}>
+    <List title="Fahrzeuge" sort={{ field: 'radio', order: 'ASC' }} {...props}>
         <Datagrid>
             <TextField source="name" label="Bezeichnung" />
             <TextField source="radio" label="Funkrufname" />

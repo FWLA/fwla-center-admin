@@ -11,7 +11,7 @@ for (var i = 0; i < n; i++) {
 }
 
 export const RealEstateList = (props) => (
-    <List title="Objekte" {...props}>
+    <List title="Objekte" sort={{ field: 'name', order: 'ASC' }} {...props}>
         <Datagrid>
             <TextField source="name" label="Bezeichnung" />
             <TextField source="pattern" label="Pattern" />

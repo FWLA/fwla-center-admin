@@ -7,7 +7,7 @@ const modes = [
 ];
 
 export const ResourceKeyPatternsList = (props) => (
-    <List title="Fahrzeug-Schlüssel Patterns" {...props}>
+    <List title="Fahrzeug-Schlüssel Patterns" sort={{ field: 'pattern', order: 'ASC' }} {...props}>
         <Datagrid>
             <TextField source="pattern" label="Pattern" />
             <SelectField source="mode" label="Modus" choices={modes} />

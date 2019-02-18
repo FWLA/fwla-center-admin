@@ -2,7 +2,7 @@ import React from 'react';
 import { Create, Datagrid, DeleteButton, DisabledInput, Edit, EditButton, List, NumberField, NumberInput, SimpleForm, TextField, TextInput } from 'react-admin';
 
 export const StationList = (props) => (
-    <List title="Standorte" {...props}>
+    <List title="Standorte" sort={{ field: 'name', order: 'ASC' }} {...props}>
         <Datagrid>
             <TextField source="name" label="Bezeichnung" />
             <TextField source="location.address.street" label="Straße" />

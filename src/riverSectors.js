@@ -7,7 +7,7 @@ const rivers = [
 ];
 
 export const RiverSectorList = (props) => (
-    <List title="Flussabschnitte" {...props}>
+    <List title="Flussabschnitte" sort={{ field: 'river', order: 'ASC' }} {...props}>
         <Datagrid>
             <SelectField source="river" label="Fluss" choices={rivers} />
             <NumberField source="from" label="von" />

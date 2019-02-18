@@ -7,7 +7,7 @@ const modes = [
 ];
 
 export const AmbulancePatternsList = (props) => (
-    <List title="Rettungsdienst-Schlüssel Patterns" {...props}>
+    <List title="Rettungsdienst-Schlüssel Patterns" sort={{ field: 'pattern', order: 'ASC' }} {...props}>
         <Datagrid>
             <TextField source="pattern" label="Pattern" />
             <SelectField source="mode" label="Modus" choices={modes} />
