@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrayInput, required, maxLength, number, Create, Datagrid, SelectField, SelectInput, DeleteButton, NumberInput, NumberField, DisabledInput, Edit, EditButton, List, LongTextInput, SimpleForm, SimpleFormIterator, TextField, TextInput } from 'react-admin';
+import { ArrayInput, ReferenceArrayField, SingleFieldList, ChipField, SelectArrayInput, ReferenceArrayInput, required, maxLength, number, Create, Datagrid, SelectField, SelectInput, DeleteButton, NumberInput, NumberField, DisabledInput, Edit, EditButton, List, LongTextInput, SimpleForm, SimpleFormIterator, TextField, TextInput } from 'react-admin';
 
 const n = 128;
 const folderAddresses = [];
@@ -19,6 +19,7 @@ const validateLocationAddressTown = [maxLength(128)];
 const validateLocationAddressDistrict = [maxLength(128)];
 const validateLocationCoordinateLatitude = [number()];
 const validateLocationCoordinateLongitude = [number()];
+const validateRealEstateTags = [];
 const validateFolderAddress = [number()];
 const validateInformation = [maxLength(2048)];
 const validateLinkDescription = [required(), maxLength(256)];
@@ -28,7 +29,6 @@ export const RealEstateList = (props) => (
     <List title="Objekte" sort={{ field: 'name', order: 'ASC' }} {...props}>
         <Datagrid>
             <TextField source="name" label="Bezeichnung" />
-            <TextField source="pattern" label="Pattern" />
             <TextField source="number" label="Objektnummer" />
             <TextField source="location.address.street" label="Straße" />
             <TextField source="location.address.zip" label="PLZ" />
@@ -36,6 +36,11 @@ export const RealEstateList = (props) => (
             <TextField source="location.address.district" label="Ortsteil" />
             <NumberField source="location.coordinate.latitude" label="Breitengrad" />
             <NumberField source="location.coordinate.longitude" label="Längengrad" />
+            <ReferenceArrayField source="realEstateTags" reference="realEstateTags" label="Objektgruppen">
+                <SingleFieldList>
+                    <ChipField source="name" />
+                </SingleFieldList>
+            </ReferenceArrayField>
             <SelectField source="folderAddress" choices={folderAddresses} label="Platz Ordner" />
             <EditButton />
             <DeleteButton />
@@ -55,6 +60,9 @@ export const RealEstateCreate = (props) => (
             <TextInput source="location.address.district" label="Ortsteil" validate={validateLocationAddressDistrict} />
             <NumberInput source="location.coordinate.latitude" label="Breitengrad" validate={validateLocationCoordinateLatitude} />
             <NumberInput source="location.coordinate.longitude" label="Längengrad" validate={validateLocationCoordinateLongitude} />
+            <ReferenceArrayInput source="realEstateTags" reference="realEstateTags" label="Objektgruppen" validate={validateRealEstateTags}>
+                <SelectArrayInput optionText="name" />
+            </ReferenceArrayInput>
             <SelectInput source="folderAddress" choices={folderAddresses} allowEmpty label="Platz Ordner" validate={validateFolderAddress} />
             <LongTextInput source="information" label="Information" validate={validateInformation} />
             <ArrayInput source="links" label="Links">
@@ -80,6 +88,9 @@ export const RealEstateEdit = (props) => (
             <TextInput source="location.address.district" label="Ortsteil" validate={validateLocationAddressDistrict} />
             <NumberInput source="location.coordinate.latitude" label="Breitengrad" validate={validateLocationCoordinateLatitude} />
             <NumberInput source="location.coordinate.longitude" label="Längengrad" validate={validateLocationCoordinateLongitude} />
+            <ReferenceArrayInput source="realEstateTags" reference="realEstateTags" label="Objektgruppen" validate={validateRealEstateTags}>
+                <SelectArrayInput optionText="name" />
+            </ReferenceArrayInput>
             <SelectInput source="folderAddress" choices={folderAddresses} allowEmpty label="Platz Ordner" validate={validateFolderAddress} />
             <LongTextInput source="information" label="Information" validate={validateInformation} />
             <ArrayInput source="links" label="Links">

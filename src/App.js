@@ -10,14 +10,15 @@ import { AmbulancePatternsCreate, AmbulancePatternsEdit, AmbulancePatternsList }
 import provider from './data-provider';
 import { EventLogList } from './eventLogs';
 import { OperationKeysCreate, OperationKeysEdit, OperationKeysList } from './operationKeys';
+import { OperationsList, OperationsShow } from './operations';
+import { RailwayCoordinateBoxCreate, RailwayCoordinateBoxEdit, RailwayCoordinateBoxList } from './railwayCoordinateBox';
 import { RealEstateCreate, RealEstateEdit, RealEstateList } from './realEstates';
+import { RealEstateTagCreate, RealEstateTagEdit, RealEstateTagList } from './realEstateTags';
 import { RegexPatternsEdit, RegexPatternsList } from './regexPatterns';
 import { ResourceKeyPatternsCreate, ResourceKeyPatternsEdit, ResourceKeyPatternsList } from './resourceKeyPatterns';
 import { ResourceCreate, ResourceEdit, ResourceList } from './resources';
+import { RiverSectorCreate, RiverSectorEdit, RiverSectorList } from './riverSectors';
 import { StationCreate, StationEdit, StationList } from './stations';
-import { OperationsList, OperationsShow } from './operations';
-import { RiverSectorList, RiverSectorCreate, RiverSectorEdit } from './riverSectors';
-import { RailwayCoordinateBoxList, RailwayCoordinateBoxCreate, RailwayCoordinateBoxEdit } from './railwayCoordinateBox';
 
 
 const messages = {
@@ -34,6 +35,7 @@ const App = () => (
     <Resource name="resourceKeyPatterns" options={{ label: 'Einsatzmittel-Pattern' }} create={ResourceKeyPatternsCreate} edit={ResourceKeyPatternsEdit} list={ResourceKeyPatternsList} icon={CodeIcon} />
     <Resource name="ambulancePatterns" options={{ label: 'Rettungsdienst-Pattern' }} create={AmbulancePatternsCreate} edit={AmbulancePatternsEdit} list={AmbulancePatternsList} icon={CodeIcon} />
     <Resource name="resources" options={{ label: 'Fahrzeuge' }} list={ResourceList} create={ResourceCreate} edit={ResourceEdit} icon={DriveEtaIcon} />
+    <Resource name="realEstateTags" options={{ label: 'Objektgruppen' }} list={RealEstateTagList} create={RealEstateTagCreate} edit={RealEstateTagEdit} icon={HomeIcon} />
     <Resource name="realEstates" options={{ label: 'Objekte' }} list={RealEstateList} create={RealEstateCreate} edit={RealEstateEdit} icon={HomeIcon} />
     <Resource name="operations" options={{ label: 'Einsätze' }} list={OperationsList} show={OperationsShow} icon={WhatshotIcon} />
     <Resource name="riverSectors" options={{ label: 'Flussabschnitte' }} list={RiverSectorList} create={RiverSectorCreate} edit={RiverSectorEdit} icon={CodeIcon} />
