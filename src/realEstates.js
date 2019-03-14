@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrayInput, ReferenceArrayField, SingleFieldList, ChipField, SelectArrayInput, ReferenceArrayInput, required, maxLength, number, Create, Datagrid, SelectField, SelectInput, DeleteButton, NumberInput, NumberField, DisabledInput, Edit, EditButton, List, LongTextInput, SimpleForm, SimpleFormIterator, TextField, TextInput } from 'react-admin';
+import { ArrayInput, ChipField, Create, Datagrid, DeleteButton, DisabledInput, Edit, EditButton, List, LongTextInput, maxLength, number, NumberField, NumberInput, ReferenceArrayField, ReferenceArrayInput, required, SelectArrayInput, SelectField, SelectInput, SimpleForm, SimpleFormIterator, SingleFieldList, TextField, TextInput } from 'react-admin';
 
 const n = 128;
 const folderAddresses = [];
