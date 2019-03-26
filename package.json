@@ -5,12 +5,15 @@
   "homepage": "/admin",
   "dependencies": {
     "http-proxy-middleware": "^0.19.0",
+    "leaflet": "^1.4.0",
     "ra-data-simple-rest": "^2.8.0",
     "ra-language-german": "^2.1.1",
     "react": "^16.8.4",
     "react-admin": "^2.8.1",
     "react-dom": "^16.8.4",
-    "react-scripts": "^2.1.5"
+    "react-leaflet": "^2.2.1",
+    "react-scripts": "^2.1.5",
+    "recompose": "^0.30.0"
   },
   "scripts": {
     "start": "react-scripts start",

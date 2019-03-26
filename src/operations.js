@@ -1,5 +1,6 @@
 import React from 'react';
-import { BooleanField, ChipField, Datagrid, DateField, List, NumberField, ReferenceArrayField, ReferenceField, Show, ShowButton, SingleFieldList, Tab, TabbedShowLayout, TextField } from 'react-admin';
+import { BooleanField, ChipField, Datagrid, DateField, List, ReferenceArrayField, ReferenceField, Show, ShowButton, SingleFieldList, Tab, TabbedShowLayout, TextField } from 'react-admin';
+import { CoordinateField } from './fields/CoordinateField';
 import { SimpleArray } from './SimpleArray';
 
 export const OperationsList = (props) => (
@@ -40,8 +41,7 @@ export const OperationsShow = (props) => (
                 <TextField source="location.address.town" label="Ort" />
                 <TextField source="location.address.district" label="Ortsteil" />
                 <TextField source="location.address.street" label="Straße" />
-                <NumberField source="location.coordinate.latitude" options={{ maximumFractionDigits: 10 }} label="Breitengrad" />
-                <NumberField source="location.coordinate.longitude" options={{ maximumFractionDigits: 10 }} label="Längengrad" />
+                <CoordinateField source="location.coordinate" label="Koordinaten" showLink="true" />
             </Tab>
             <Tab label="Fahrzeuge">
                 <SimpleArray source="resourceKeys" label="Einsatzmittel" />
@@ -60,8 +60,7 @@ export const OperationsShow = (props) => (
                 <TextField source="location.address.town" label="Ort" />
                 <TextField source="location.address.district" label="Ortsteil" />
                 <TextField source="location.address.street" label="Straße" />
-                <NumberField source="location.coordinate.latitude" options={{ maximumFractionDigits: 10 }} label="Breitengrad" />
-                <NumberField source="location.coordinate.longitude" options={{ maximumFractionDigits: 10 }} label="Längengrad" />
+                <CoordinateField source="location.coordinate" label="Koordinaten" showLink="true" />
                 <TextField source="notice" label="Bemerkung" />
                 <TextField source="message" label="Meldebild" />
                 <DateField source="time" showTime label="Alarmzeit" />
