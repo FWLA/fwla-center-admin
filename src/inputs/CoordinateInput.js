@@ -55,7 +55,7 @@ class CoordinateInputComponent extends React.Component {
         }
         const marker = this.refmarker.current;
         if (marker != null) {
-            marker.setLatLng(latLng);
+            marker.leafletElement.setLatLng(latLng);
         }
     }
 
