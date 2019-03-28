@@ -1,28 +1,21 @@
-import React, { createRef } from 'react';
-import { addField, FieldTitle } from 'ra-core';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
-import { Map, TileLayer, Marker } from 'react-leaflet';
-import L from 'leaflet'
 import { PropTypes } from 'prop-types';
+import { addField, FieldTitle } from 'ra-core';
+import React, { createRef } from 'react';
+import { Map, Marker, TileLayer } from 'react-leaflet';
 
-require('leaflet/dist/leaflet.css');
 require('./CoordinateInput.css');
-
-const markerIcon = new L.Icon({
-    iconUrl: 'images/marker-icon.png',
-    iconRetinaUrl: 'images/marker-icon-2x.png',
-    iconAnchor: [12, 41],
-    iconSize: [25, 41],
-    shadowUrl: 'images/marker-shadow.png',
-    shadowSize: [41, 41],
-});
 
 function fromLeafletLatLng(latLng) {
     return {
         latitude: latLng.lat,
         longitude: latLng.lng,
     };
+};
+
+function toLeafletLatLng(coordinate) {
+    return [coordinate.latitude, coordinate.longitude];
 };
 
 class CoordinateInputComponent extends React.Component {
@@ -54,6 +47,18 @@ class CoordinateInputComponent extends React.Component {
         }
     }
 
+    setPosition = (coordinate) => {
+        const latLng = toLeafletLatLng(coordinate);
+        const map = this.refmap.current;
+        if (map != null) {
+            map.leafletElement.panTo(latLng);
+        }
+        const marker = this.refmarker.current;
+        if (marker != null) {
+            marker.setLatLng(latLng);
+        }
+    }
+
     render() {
         const {
             label,
@@ -63,6 +68,16 @@ class CoordinateInputComponent extends React.Component {
             resource,
             isRequired,
         } = this.props;
+
+        if (!input.value) {
+            fetch('/api/v1/settings/home').then(response => {
+                response.json().then(json => {
+                    this.setPosition(json);
+                });
+            }, (err) => {
+                console.log(err);
+            });
+        }
 
         const position = input.value ? [input.value.latitude, input.value.longitude] : [0, 0];
 
@@ -86,7 +101,7 @@ class CoordinateInputComponent extends React.Component {
                             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
-                        <Marker ref={this.refmarker} position={position} icon={markerIcon} draggable={true} onDragend={this.updatePosition} />
+                        <Marker ref={this.refmarker} position={position} draggable={true} onDragend={this.updatePosition} />
                     </Map>
                 </div>
             </FormControl>
