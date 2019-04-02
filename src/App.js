@@ -2,11 +2,13 @@ import CodeIcon from '@material-ui/icons/Code';
 import DriveEtaIcon from '@material-ui/icons/DriveEta';
 import HomeIcon from '@material-ui/icons/Home';
 import InfoIcon from '@material-ui/icons/Info';
+import VideocamIcon from '@material-ui/icons/Videocam';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
 import germanMessages from 'ra-language-german';
 import React from 'react';
 import { Admin, Resource } from 'react-admin';
 import { AmbulancePatternsCreate, AmbulancePatternsEdit, AmbulancePatternsList } from './ambulancePatterns';
+import { CameraCreate, CameraList, CameraEdit } from './cameras';
 import provider from './data-provider';
 import { EventLogList } from './eventLogs';
 import { OperationKeysCreate, OperationKeysEdit, OperationKeysList } from './operationKeys';
@@ -40,6 +42,7 @@ const App = () => (
     <Resource name="operations" options={{ label: 'Einsätze' }} list={OperationsList} show={OperationsShow} icon={WhatshotIcon} />
     <Resource name="riverSectors" options={{ label: 'Flussabschnitte' }} list={RiverSectorList} create={RiverSectorCreate} edit={RiverSectorEdit} icon={CodeIcon} />
     <Resource name="railwayCoordinateBoxes" options={{ label: 'Bahn-Ausschnitte' }} list={RailwayCoordinateBoxList} create={RailwayCoordinateBoxCreate} edit={RailwayCoordinateBoxEdit} icon={CodeIcon} />
+    <Resource name="cameras" options={{ label: 'Kameras' }} list={CameraList} create={CameraCreate} edit={CameraEdit} icon={VideocamIcon} />
     <Resource name="eventLogs" options={{ label: 'Logs' }} list={EventLogList} icon={InfoIcon} />
   </Admin>
 );
