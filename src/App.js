@@ -2,14 +2,16 @@ import CodeIcon from '@material-ui/icons/Code';
 import DriveEtaIcon from '@material-ui/icons/DriveEta';
 import HomeIcon from '@material-ui/icons/Home';
 import InfoIcon from '@material-ui/icons/Info';
+import TvIcon from '@material-ui/icons/Tv';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
 import germanMessages from 'ra-language-german';
 import React from 'react';
 import { Admin, Resource } from 'react-admin';
 import { AmbulancePatternsCreate, AmbulancePatternsEdit, AmbulancePatternsList } from './ambulancePatterns';
-import { CameraCreate, CameraList, CameraEdit } from './cameras';
+import { CameraCreate, CameraEdit, CameraList } from './cameras';
 import provider from './data-provider';
+import { DisplayEventCreate, DisplayEventEdit, DisplayEventList } from './DisplayEvent';
 import { EventLogList } from './eventLogs';
 import { OperationKeysCreate, OperationKeysEdit, OperationKeysList } from './operationKeys';
 import { OperationsList, OperationsShow } from './operations';
@@ -31,6 +33,7 @@ const i18nProvider = locale => messages[locale];
 
 const App = () => (
   <Admin title="FWLA Center" dataProvider={provider('/api/v1')} locale="de" i18nProvider={i18nProvider}>
+    <Resource name="displayEvents" options={{ label: 'Anzeigen' }} list={DisplayEventList} create={DisplayEventCreate} edit={DisplayEventEdit} icon={TvIcon} />
     <Resource name="regexPatterns" options={{ label: 'Regex Patterns' }} list={RegexPatternsList} edit={RegexPatternsEdit} icon={CodeIcon} />
     <Resource name="stations" options={{ label: 'Standorte' }} list={StationList} create={StationCreate} edit={StationEdit} icon={HomeIcon} />
     <Resource name="operationKeys" options={{ label: 'Einsatzstichworte' }} list={OperationKeysList} create={OperationKeysCreate} edit={OperationKeysEdit} icon={WhatshotIcon} />
