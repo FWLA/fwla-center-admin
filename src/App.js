@@ -13,8 +13,8 @@ import { CameraCreate, CameraEdit, CameraList } from './cameras';
 import provider from './data-provider';
 import { DisplayEventCreate, DisplayEventEdit, DisplayEventList } from './DisplayEvent';
 import { EventLogList } from './eventLogs';
+import { OperationList, OperationShow } from './Operation';
 import { OperationKeysCreate, OperationKeysEdit, OperationKeysList } from './operationKeys';
-import { OperationsList, OperationsShow } from './operations';
 import { RailwayCoordinateBoxCreate, RailwayCoordinateBoxEdit, RailwayCoordinateBoxList } from './railwayCoordinateBox';
 import { RealEstateCreate, RealEstateEdit, RealEstateList } from './realEstates';
 import { RealEstateTagCreate, RealEstateTagEdit, RealEstateTagList } from './realEstateTags';
@@ -33,6 +33,7 @@ const i18nProvider = locale => messages[locale];
 
 const App = () => (
   <Admin title="FWLA Center" dataProvider={provider('/api/v1')} locale="de" i18nProvider={i18nProvider}>
+    <Resource name="operations" options={{ label: 'Einsätze' }} list={OperationList} show={OperationShow} icon={WhatshotIcon} />
     <Resource name="displayEvents" options={{ label: 'Anzeigen' }} list={DisplayEventList} create={DisplayEventCreate} edit={DisplayEventEdit} icon={TvIcon} />
     <Resource name="regexPatterns" options={{ label: 'Regex Patterns' }} list={RegexPatternsList} edit={RegexPatternsEdit} icon={CodeIcon} />
     <Resource name="stations" options={{ label: 'Standorte' }} list={StationList} create={StationCreate} edit={StationEdit} icon={HomeIcon} />
@@ -42,7 +43,6 @@ const App = () => (
     <Resource name="resources" options={{ label: 'Fahrzeuge' }} list={ResourceList} create={ResourceCreate} edit={ResourceEdit} icon={DriveEtaIcon} />
     <Resource name="realEstateTags" options={{ label: 'Objektgruppen' }} list={RealEstateTagList} create={RealEstateTagCreate} edit={RealEstateTagEdit} icon={HomeIcon} />
     <Resource name="realEstates" options={{ label: 'Objekte' }} list={RealEstateList} create={RealEstateCreate} edit={RealEstateEdit} icon={HomeIcon} />
-    <Resource name="operations" options={{ label: 'Einsätze' }} list={OperationsList} show={OperationsShow} icon={WhatshotIcon} />
     <Resource name="riverSectors" options={{ label: 'Flussabschnitte' }} list={RiverSectorList} create={RiverSectorCreate} edit={RiverSectorEdit} icon={CodeIcon} />
     <Resource name="railwayCoordinateBoxes" options={{ label: 'Bahn-Ausschnitte' }} list={RailwayCoordinateBoxList} create={RailwayCoordinateBoxCreate} edit={RailwayCoordinateBoxEdit} icon={CodeIcon} />
     <Resource name="cameras" options={{ label: 'Kameras' }} list={CameraList} create={CameraCreate} edit={CameraEdit} icon={VideocamIcon} />

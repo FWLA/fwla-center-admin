@@ -3,7 +3,7 @@ import { BooleanField, ChipField, Datagrid, DateField, List, ReferenceArrayField
 import { CoordinateField } from './fields/CoordinateField';
 import { SimpleArray } from './SimpleArray';
 
-export const OperationsList = (props) => (
+export const OperationList = (props) => (
     <List title="Einsätze" sort={{ field: 'time', order: 'DESC' }} {...props}>
         <Datagrid>
             <TextField source="id" label="ID" />
@@ -21,7 +21,7 @@ export const OperationsList = (props) => (
     </List>
 );
 
-export const OperationsShow = (props) => (
+export const OperationShow = (props) => (
     <Show {...props}>
         <TabbedShowLayout>
             <Tab label="Übersicht">
@@ -38,6 +38,7 @@ export const OperationsShow = (props) => (
                 <ReferenceField source="realEstateId" reference="realEstates" allowEmpty label="Aufgelöstes Objekt">
                     <TextField source="name" />
                 </ReferenceField>
+                <TextField source="realEstateAdditional" label="Objekt - Zusatz" />
                 <TextField source="location.address.town" label="Ort" />
                 <TextField source="location.address.district" label="Ortsteil" />
                 <TextField source="location.address.street" label="Straße" />
