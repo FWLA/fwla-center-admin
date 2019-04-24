@@ -1,6 +1,7 @@
 import RichTextInput from 'ra-input-rich-text';
 import React from 'react';
-import { BooleanField, BooleanInput, Create, Datagrid, DateField, DateTimeInput, DeleteButton, DisabledInput, Edit, EditButton, List, SimpleForm } from 'react-admin';
+import { BooleanField, BooleanInput, Create, Datagrid, DateField, DeleteButton, DisabledInput, Edit, EditButton, List, SimpleForm } from 'react-admin';
+import { DateTimeInput } from 'react-admin-date-inputs';
 
 const validateDisplayEvent = (value) => {
     const errors = {};
@@ -37,8 +38,8 @@ export const DisplayEventList = (props) => (
 export const DisplayEventCreate = (props) => (
     <Create title="Anzeige erstellen" {...props}>
         <SimpleForm validate={validateDisplayEvent}>
-            <DateTimeInput source="startTime" label="Start-Zeit" validate={validateStartTime} />
-            <DateTimeInput source="endTime" label="End-Zeit" validate={validateEndTime} />
+            <DateTimeInput source="startTime" label="Start-Zeit" validate={validateStartTime} options={{ format: 'dd.MM.yyyy, HH:mm:ss', ampm: false, clearable: true }} />
+            <DateTimeInput source="endTime" label="End-Zeit" validate={validateEndTime} options={{ format: 'dd.MM.yyyy, HH:mm:ss', ampm: false, clearable: true }} />
             <RichTextInput source="text" label="Text" validate={validateText} />
             <BooleanInput source="showOperation" label="Einsatz anzeigen" validate={validateShowOperation} />
         </SimpleForm>
@@ -49,8 +50,8 @@ export const DisplayEventEdit = (props) => (
     <Edit title="Anzeige bearbeiten" {...props}>
         <SimpleForm validate={validateDisplayEvent}>
             <DisabledInput source="id" label="ID" />
-            <DateTimeInput source="startTime" label="Start-Zeit" validate={validateStartTime} />
-            <DateTimeInput source="endTime" label="End-Zeit" validate={validateEndTime} />
+            <DateTimeInput source="startTime" label="Start-Zeit" validate={validateStartTime} options={{ format: 'dd.MM.yyyy, HH:mm:ss', ampm: false, clearable: true }} />
+            <DateTimeInput source="endTime" label="End-Zeit" validate={validateEndTime} options={{ format: 'dd.MM.yyyy, HH:mm:ss', ampm: false, clearable: true }} />
             <RichTextInput source="text" label="Text" validate={validateText} />
             <BooleanInput source="showOperation" label="Einsatz anzeigen" validate={validateShowOperation} />
         </SimpleForm>
