@@ -13,6 +13,7 @@ import { CameraCreate, CameraEdit, CameraList } from './cameras';
 import provider from './data-provider';
 import { DisplayEventCreate, DisplayEventEdit, DisplayEventList } from './DisplayEvent';
 import { EventLogList } from './eventLogs';
+import MyLayout from './Layout';
 import { OperationList, OperationShow } from './Operation';
 import { OperationKeysCreate, OperationKeysEdit, OperationKeysList } from './operationKeys';
 import { RailwayCoordinateBoxCreate, RailwayCoordinateBoxEdit, RailwayCoordinateBoxList } from './railwayCoordinateBox';
@@ -32,7 +33,7 @@ const messages = {
 const i18nProvider = locale => messages[locale];
 
 const App = () => (
-  <Admin title="FWLA Center" dataProvider={provider('/api/v1')} locale="de" i18nProvider={i18nProvider}>
+  <Admin title="FWLA Center" appLayout={MyLayout} dataProvider={provider('/api/v1')} locale="de" i18nProvider={i18nProvider}>
     <Resource name="operations" options={{ label: 'Einsätze' }} list={OperationList} show={OperationShow} icon={WhatshotIcon} />
     <Resource name="displayEvents" options={{ label: 'Anzeigen' }} list={DisplayEventList} create={DisplayEventCreate} edit={DisplayEventEdit} icon={TvIcon} />
     <Resource name="regexPatterns" options={{ label: 'Regex Patterns' }} list={RegexPatternsList} edit={RegexPatternsEdit} icon={CodeIcon} />

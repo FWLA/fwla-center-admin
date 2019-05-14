@@ -8,8 +8,8 @@ const validateLR = [required()];
 export const RailwayCoordinateBoxList = (props) => (
     <List title="Bahn-Ausschnitte" {...props}>
         <Datagrid>
-            <CoordinateField source="upperLeft" label="oben-links" showLink="true" />
-            <CoordinateField source="lowerRight" label="unten-rechts" showLink="true" />
+            <CoordinateField source="upperLeft" label="oben-links" showLink={true} />
+            <CoordinateField source="lowerRight" label="unten-rechts" showLink={true} />
             <EditButton />
             <DeleteButton />
         </Datagrid>
