@@ -34,6 +34,7 @@ const Menu = ({ resources, onMenuClick }) => {
         {createMenuItem(resourcesMap.realEstates, onMenuClick)}
 
         {createCategoryHeader('Geodaten')}
+        {createMenuItem(resourcesMap.mapLayers, onMenuClick)}
         {createMenuItem(resourcesMap.riverSectors, onMenuClick)}
         {createMenuItem(resourcesMap.railwayCoordinateBoxes, onMenuClick)}
 
