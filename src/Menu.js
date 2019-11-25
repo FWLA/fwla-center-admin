@@ -32,6 +32,7 @@ const Menu = ({ resources, onMenuClick }) => {
         {createMenuItem(resourcesMap.displayEvents, onMenuClick)}
         {createMenuItem(resourcesMap.resources, onMenuClick)}
         {createMenuItem(resourcesMap.realEstates, onMenuClick)}
+        {createMenuItem(resourcesMap.roadblocks, onMenuClick)}
 
         {createCategoryHeader('Geodaten')}
         {createMenuItem(resourcesMap.mapLayers, onMenuClick)}

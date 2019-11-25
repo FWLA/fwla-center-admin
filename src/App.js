@@ -6,6 +6,7 @@ import TvIcon from '@material-ui/icons/Tv';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
 import LayersIcon from '@material-ui/icons/Layers';
+import BlockIcon from '@material-ui/icons/Block';
 import germanMessages from 'ra-language-german';
 import React from 'react';
 import { Admin, Resource } from 'react-admin';
@@ -26,6 +27,7 @@ import { ResourceCreate, ResourceEdit, ResourceList } from './resources';
 import { RiverSectorCreate, RiverSectorEdit, RiverSectorList } from './riverSectors';
 import { StationCreate, StationEdit, StationList } from './stations';
 import { MapLayerList, MapLayerCreate, MapLayerEdit } from './MapLayer';
+import { RoadblockList, RoadblockCreate, RoadblockEdit } from './Roadblock';
 
 
 const messages = {
@@ -44,6 +46,7 @@ const App = () => (
     <Resource name="displayEvents" options={{ label: 'Anzeigen' }} list={DisplayEventList} create={DisplayEventCreate} edit={DisplayEventEdit} icon={TvIcon} />
     <Resource name="resources" options={{ label: 'Fahrzeuge' }} list={ResourceList} create={ResourceCreate} edit={ResourceEdit} icon={DriveEtaIcon} />
     <Resource name="realEstates" options={{ label: 'Objekte' }} list={RealEstateList} create={RealEstateCreate} edit={RealEstateEdit} icon={HomeIcon} />
+    <Resource name="roadblocks" options={{ label: 'Straßensperren' }} list={RoadblockList} create={RoadblockCreate} edit={RoadblockEdit} icon={BlockIcon} />
 
     {/*
       Geo data entities
