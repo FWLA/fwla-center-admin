@@ -18,7 +18,7 @@
     "react-collapsible": "^2.6.0",
     "react-dom": "^16.8.6",
     "react-leaflet": "^2.3.0",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^3.4.1",
     "recompose": "^0.30.0"
   },
   "scripts": {
