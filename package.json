@@ -1,6 +1,6 @@
 {
   "name": "fwla-center-admin",
-  "version": "0.1.9-SNAPSHOT",
+  "version": "0.1.9",
   "private": true,
   "homepage": "/admin",
   "dependencies": {
